@@ -68,24 +68,4 @@ resource "google_dataproc_cluster" "project_cluster" {
 
 
 
-resource "google_dataproc_job" "pyspark" {
-  region       = google_dataproc_cluster.project_cluster.region
-  force_delete = true
-  placement {
-    cluster_name = google_dataproc_cluster.project_cluster.name
-  }
-
-  pyspark_config {
-    main_python_file_uri = "gs://${google_storage_bucket.demo-bucket.name}/${google_storage_bucket_object.script-job.name}"  
-    properties = {
-      "spark.logConf" = "true"
-    }
-  }
-}
-
-# Check out current state of the jobs
-
-output "pyspark_status" {
-  value = google_dataproc_job.pyspark.status[0].state
-}  
 
