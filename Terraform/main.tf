@@ -48,17 +48,9 @@ resource "google_dataproc_cluster" "project_cluster" {
 
       master_config {
         num_instances = 1
-        machine_type  = "e2-medium"
+        machine_type  = "n2-standard-2"
         disk_config {
-          boot_disk_type    = "pd-standard"
-          boot_disk_size_gb = 100
-        }
-      }
-
-      worker_config {
-        num_instances    = 2
-        machine_type     = "e2-medium"
-        disk_config {
+          boot_disk_type    = "pd-balanced"
           boot_disk_size_gb = 100
         }
       }
