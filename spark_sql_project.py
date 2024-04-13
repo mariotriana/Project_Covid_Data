@@ -41,5 +41,6 @@ GROUP BY 1,2
 ORDER BY Date_reported DESC
 """)
 
+output = "gs://covid-data-project-bucket/output-data"
 df_result.coalesce(1).write.parquet(output, mode='overwrite')
 
