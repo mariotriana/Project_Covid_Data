@@ -21,7 +21,7 @@ git clone https://github.com/mariotriana/Project_Covid_Data
 
 Previously you must installed in your machine Terraform and Docker.
 
-#  Deploy Infraestructure (Terraform)
+## Deploy Infraestructure (Terraform)
 1. Navigate into Terraform folder within the Project folder
 2. Place your own Google Cloud Platform credentials file into keys/ folder, then rename the file as (my-creds.json)
 3. Run terraform initialize commands in this order:
@@ -33,7 +33,7 @@ terraform apply
 ```
 Here you are creating a GCS bucket named "covid-data-project-bucket" and a Dataproc Cluter named "covid-data-cluster".
 
-#  Data processing through Mage, Pyspark and GCS
+## Data processing through Mage, Pyspark and GCS
 1. Navigate into mage folder within the Project folder
 2. Place your credentials file (my-creds.json) within mage folder
 3. Run the next commands to initialize Mage: 
@@ -56,7 +56,7 @@ Then, navigate to http://localhost:6789 in your browser. Now you are able to run
 
 6. Check if the job was uploaded into the cluster "covid-data-cluster" and the output of the job is here: gs://covid-data-project-bucket/output-data
 
-# Big Query and Looker Studio
+## Big Query and Looker Studio
 1. Return to mage, go to the pipeline named "covid_data_to_gcs" and run both blocks to send job's output to BigQuery.
 
 2. To create a dashboard, go to Looker Studio in your browser, then click in create a new report and select Bigquery to choose the dataset called covid_data contained in the project called "My First project".
