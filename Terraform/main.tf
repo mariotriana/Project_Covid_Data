@@ -42,7 +42,7 @@ resource "google_bigquery_dataset" "project_dataset" {
 
 resource "google_dataproc_cluster" "project_cluster" {
   name   = var.dataproc_cluster_name
-  region = var.region 
+  region = "us-east1"
 
   cluster_config {
 
