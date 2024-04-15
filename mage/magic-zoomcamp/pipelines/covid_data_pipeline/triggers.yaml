@@ -1,0 +1,12 @@
+triggers:
+- envs: []
+  last_enabled_at: 2024-04-15 16:23:18.371262
+  name: monthly covid data execution
+  pipeline_uuid: covid_data_pipeline
+  schedule_interval: '@monthly'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-04-15 16:22:00
+  status: active
+  variables: {}

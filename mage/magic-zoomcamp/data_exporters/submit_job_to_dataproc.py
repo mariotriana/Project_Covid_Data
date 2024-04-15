@@ -7,7 +7,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/src/my-creds.json"
 credentials = service_account.Credentials.from_service_account_file("/home/src/my-creds.json")
 
 PROJECT_ID="weighty-elf-412403"
-REGION="us-central1"
+REGION="us-east1"
 CLUSTER_NAME="covid-data-cluster"
 PYSPARK_FILE="gs://covid-data-project-bucket/spark_sql_project.py"
 EXTRA_ARGS=["--input=gs://covid-data-project-bucket/covid_data.parquet" , "--output=gs://covid-data-project-bucket/output-data"]
