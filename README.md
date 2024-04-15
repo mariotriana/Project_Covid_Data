@@ -13,16 +13,16 @@ Pyspark used used to make data transformations in different data columns and sho
 ## Dashboard
 Looker Studio was used to make a dashboard with processed data to show the most representatives metrics about covid data in a periodic way, displaying numbers per country and in specific dates.
 
-# Instructions: 
+## Instructions: 
 
 Clone this repository:
 ```
-git clone https://github.com/mariotriana/Project_Covid_Data
+git clone https://github.com/mariotriana/Project_Covid_Data.git
 ```
 
 Previously you must installed in your machine Terraform and Docker.
 
-## Deploy Infraestructure (Terraform)
+### Deploy Infraestructure (Terraform)
 1. Navigate into Terraform folder within the Project folder
 2. Place your own Google Cloud Platform credentials file into keys/ folder, then rename the file as (my-creds.json)
 3. Run terraform initialize commands in this order:
@@ -34,7 +34,7 @@ terraform apply
 ```
 Here you are creating a GCS bucket named "covid-data-project-bucket" and a Dataproc Cluter named "covid-data-cluster".
 
-## Data processing through Mage, Pyspark and GCS
+### Data processing through Mage, Pyspark and GCS
 1. Navigate into mage folder within the Project folder
 2. Place your credentials file (my-creds.json) within mage folder
 3. Run the next commands to initialize Mage (Docker Desktop app must be opened): 
@@ -47,17 +47,17 @@ docker compose up
 Then, navigate to http://localhost:6789 in your browser. Now you are able to run Mage pipelines.
 
 4. Go to the pipeline named "covid_data_pipeline" and run blocks in this order:
-* data loader (load_covid_data)
-* transformer (transform_covid_data)
-* data exporter (covid_data_to_gcs)
+    * Data loader (load_covid_data)
+    * Transformer (transform_covid_data)
+    * Data exporter (covid_data_to_gcs)
 
 5. Go to Google Cloud Storage in your navigator and check if the file named "covid_data.parquet" is in the bucket builded previously("covid-data-project-bucket")
 
-* Run 2nd data exporter (submit_job_to_dataproc) to submit Pyspark Job into Dataproc Cluster
+    * Run 2nd data exporter (submit_job_to_dataproc) to submit Pyspark Job into Dataproc Cluster
 
 6. Check if the job was uploaded into the cluster "covid-data-cluster" and the output of the job is here: gs://covid-data-project-bucket/output-data
 
-## Big Query and Looker Studio
+### Big Query and Looker Studio
 1. Return to mage and go to the pipeline named "covid_data_to_gcs" and run data loader(load_covid_to_gcs) and transformer(transform_staged_data) blocks. Finally run data exporter (write_covid_data_to_bq) to send job's output to BigQuery.
 
 2. To create a dashboard, go to Looker Studio in your browser, then click in create a new report and select Bigquery to choose the dataset called covid_data contained in the project called "My First project".
