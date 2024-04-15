@@ -1,4 +1,4 @@
-# Project_Covid_Data
+# Project Covid Data
 
 ## Problem description
 Covid-19 pandemic was the most serious health crisis we have suffered in the last time globally. The unexpected spread and consequences of the virus crated an urgent need for data to track its evolution, understand how covid numbers changes to formulate effective countermeasures. In this project I selected a raw dataset from World Health Organization (WHO) which contains Covid Data since 2020 until March of the current year. Data were processed, transformed and partitioned to make easier and more understandable its interpretation for everyone who is interested in it.
@@ -13,7 +13,7 @@ Pyspark used used to make data transformations in different data columns and sho
 ## Dashboard
 Looker Studio was used to make a dashboard with processed data to show the most representatives metrics about covid data in a periodic way, displaying numbers per country and in specific dates.
 
-### Instructions: 
+# Instructions: 
 
 Clone this repository:
 ```
