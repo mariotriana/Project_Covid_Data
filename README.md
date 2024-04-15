@@ -13,7 +13,7 @@ Pyspark used used to make data transformations in different data columns and sho
 ## Dashboard
 Looker Studio was used to make a dashboard with processed data to show the most representatives metrics about covid data in a periodic way, displaying numbers per country and in specific dates.
 
-## Instructions 
+### Instructions: 
 
 Clone this repository:
 ```
