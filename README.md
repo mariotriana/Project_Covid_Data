@@ -68,10 +68,12 @@ Then, navigate to http://localhost:6789 in your browser. Now, you are able to ru
 7. Check job output which is in the bucket in a folder named "output-data/".
 
 ### Big Query and Looker Studio
-1. Return to mage and go to the pipeline named "covid_data_to_gcs" and run data loader(load_covid_to_gcs) and transformer(transform_staged_data) blocks. Finally run data exporter (write_covid_data_to_bq) to send job's output to BigQuery.
+1. Return to mage and go to the pipeline named "covid_data_to_gcs" and run data loader(load_covid_to_gcs) and transformer(transform_staged_data) blocks. Finally run data exporter (write_covid_data_to_bq) to send partitioned file to BigQuery.
 
 2. To create a dashboard, go to Looker Studio in your browser, then click in create a new report and select Bigquery to choose the dataset called covid_data contained in the project called "My First project".
 
 3. Choose the table "who_covid_data" and add it to the report.
 
 4. Now you can create your own dashboard as I did [here](https://lookerstudio.google.com/reporting/118ea7c6-746b-49fb-9167-a851f259a388/page/WNjwD).
+
+### Note: don't forget to go to Terraform folder in your terminal and run command "terraform destroy" after you finished.
