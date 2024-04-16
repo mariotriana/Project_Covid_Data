@@ -1,5 +1,6 @@
 # Project Covid Data
-![project_diagram drawio (2)](https://github.com/mariotriana/Project_Covid_Data/assets/89442960/53ae346f-3cbc-4af3-af97-1ed0010369d8)
+![project_diagram drawio](https://github.com/mariotriana/Project_Covid_Data/assets/89442960/5efe6b52-8afe-4833-a82d-8aece24284ff)
+
 
 ## Problem description
 Covid-19 pandemic was the most serious health crisis we have suffered in the last time globally. The unexpected spread and consequences of the virus crated an urgent need for data to track its evolution, understand how covid numbers changes to formulate effective countermeasures. In this project I selected a raw dataset from World Health Organization (WHO) which contains Covid Data since 2020 until March of the current year. Data were processed, transformed and partitioned to make easier and more understandable its interpretation for everyone who is interested in it.
