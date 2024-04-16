@@ -1,5 +1,6 @@
 # Project Covid Data
-![project_diagram drawio (2)](https://github.com/mariotriana/Project_Covid_Data/assets/89442960/53ae346f-3cbc-4af3-af97-1ed0010369d8)
+![project_diagram drawio](https://github.com/mariotriana/Project_Covid_Data/assets/89442960/5efe6b52-8afe-4833-a82d-8aece24284ff)
+
 
 ## Problem description
 Covid-19 pandemic was the most serious health crisis we have suffered in the last time globally. The unexpected spread and consequences of the virus crated an urgent need for data to track its evolution, understand how covid numbers changes to formulate effective countermeasures. In this project I selected a raw dataset from World Health Organization (WHO) which contains Covid Data since 2020 until March of the current year. Data were processed, transformed and partitioned to make easier and more understandable its interpretation for everyone who is interested in it.
@@ -28,6 +29,9 @@ Previously you must installed in your machine Terraform and Docker.
 2. Place your own Google Cloud Platform credentials file into keys/ folder, then rename the file as (my-creds.json)
 3. Run terraform initialize commands in this order:
 ```
+terraform init
+```
+```
 terraform plan
 ```
 ```
@@ -36,16 +40,20 @@ terraform apply
 Here you are creating a GCS bucket named "covid-data-project-bucket" and a Dataproc Cluter named "covid-data-cluster".
 
 ### Data processing through Mage, Pyspark and GCS
-1. Navigate into mage folder within the Project folder
-2. Place your credentials file (my-creds.json) within mage folder
-3. Run the next commands to initialize Mage (Docker Desktop app must be opened): 
+1. Before everything place your credentials file (my-creds.json) within mage folder
+2. Open a terminal and navigate into mage folder within the Project folder
+3. Run the next command to copy enviroment variables
+```
+cp dev.env .env
+```
+5. Run the next commands to initialize Mage (Docker Desktop app must be opened): 
 ```
 docker compose build
 ```
 ```
 docker compose up
 ```
-Then, navigate to http://localhost:6789 in your browser. Now you are able to run Mage pipelines.
+Then, navigate to http://localhost:6789 in your browser. Now, you are able to run Mage pipelines.
 
 4. Go to the pipeline named "covid_data_pipeline" and run blocks in this order:
     * Data loader (load_covid_data)
@@ -54,9 +62,10 @@ Then, navigate to http://localhost:6789 in your browser. Now you are able to run
 
 5. Go to Google Cloud Storage in your navigator and check if the file named "covid_data.parquet" is in the bucket builded previously("covid-data-project-bucket")
 
-    * Run 2nd data exporter (submit_job_to_dataproc) to submit Pyspark Job into Dataproc Cluster
+    * Run 2nd data exporter (submit_job_to_dataproc) to submit Pyspark Job into Dataproc Cluster.
 
-6. Check if the job was uploaded into the cluster "covid-data-cluster" and the output of the job is here: gs://covid-data-project-bucket/output-data
+6. Go to Dataproc, to jobs section and check if the job was uploaded into the cluster "covid-data-cluster".
+7. Check job output which is in the bucket in a folder named "output-data/".
 
 ### Big Query and Looker Studio
 1. Return to mage and go to the pipeline named "covid_data_to_gcs" and run data loader(load_covid_to_gcs) and transformer(transform_staged_data) blocks. Finally run data exporter (write_covid_data_to_bq) to send job's output to BigQuery.
