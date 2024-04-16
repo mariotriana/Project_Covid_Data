@@ -20,7 +20,7 @@ def load_from_google_cloud_storage(*args, **kwargs):
     config_profile = 'default'
 
     bucket_name = 'covid-data-project-bucket'
-    object_key = '/output-data/part-00000-f24302dd-2399-4a12-92a5-d8181f8800c1-c000.snappy.parquet'
+    object_key = 'covid_data.parquet'
 
     return GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).load(
         bucket_name,
