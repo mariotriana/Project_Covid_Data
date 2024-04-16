@@ -40,9 +40,13 @@ terraform apply
 Here you are creating a GCS bucket named "covid-data-project-bucket" and a Dataproc Cluter named "covid-data-cluster".
 
 ### Data processing through Mage, Pyspark and GCS
-1. Navigate into mage folder within the Project folder
-2. Place your credentials file (my-creds.json) within mage folder
-3. Run the next commands to initialize Mage (Docker Desktop app must be opened): 
+1. Before everything place your credentials file (my-creds.json) within mage folder
+2. Open a terminal and navigate into mage folder within the Project folder
+3. Run the next command to copy enviroment variables
+```
+cp dev.env .env
+```
+5. Run the next commands to initialize Mage (Docker Desktop app must be opened): 
 ```
 docker compose build
 ```
