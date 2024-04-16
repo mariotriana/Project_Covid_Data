@@ -29,6 +29,9 @@ Previously you must installed in your machine Terraform and Docker.
 2. Place your own Google Cloud Platform credentials file into keys/ folder, then rename the file as (my-creds.json)
 3. Run terraform initialize commands in this order:
 ```
+terraform init
+```
+```
 terraform plan
 ```
 ```
