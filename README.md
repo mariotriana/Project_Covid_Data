@@ -53,7 +53,7 @@ docker compose build
 ```
 docker compose up
 ```
-Then, navigate to http://localhost:6789 in your browser. Now you are able to run Mage pipelines.
+Then, navigate to http://localhost:6789 in your browser. Now, you are able to run Mage pipelines.
 
 4. Go to the pipeline named "covid_data_pipeline" and run blocks in this order:
     * Data loader (load_covid_data)
@@ -62,9 +62,10 @@ Then, navigate to http://localhost:6789 in your browser. Now you are able to run
 
 5. Go to Google Cloud Storage in your navigator and check if the file named "covid_data.parquet" is in the bucket builded previously("covid-data-project-bucket")
 
-    * Run 2nd data exporter (submit_job_to_dataproc) to submit Pyspark Job into Dataproc Cluster
+    * Run 2nd data exporter (submit_job_to_dataproc) to submit Pyspark Job into Dataproc Cluster.
 
-6. Check if the job was uploaded into the cluster "covid-data-cluster" and the output of the job is here: gs://covid-data-project-bucket/output-data
+6. Go to Dataproc, to jobs section and check if the job was uploaded into the cluster "covid-data-cluster".
+7. Check job output which is in the bucket in a folder named "output-data/".
 
 ### Big Query and Looker Studio
 1. Return to mage and go to the pipeline named "covid_data_to_gcs" and run data loader(load_covid_to_gcs) and transformer(transform_staged_data) blocks. Finally run data exporter (write_covid_data_to_bq) to send job's output to BigQuery.
