@@ -75,6 +75,7 @@ Then, navigate to http://localhost:6789 in your browser. Now, you are able to ru
 3. Choose the table "who_covid_data" and add it to the report.
 
 4. Now, you can create your own dashboard as I did [here](https://lookerstudio.google.com/reporting/118ea7c6-746b-49fb-9167-a851f259a388/page/WNjwD).
+![Captura de pantalla 2024-04-18 185523](https://github.com/mariotriana/Project_Covid_Data/assets/89442960/b0ebbdfa-1c17-49a1-aef8-1ced2d8994bd)
 
 
 ### Note: don't forget to go to Terraform folder in your terminal and run command "terraform destroy" after you finished.
